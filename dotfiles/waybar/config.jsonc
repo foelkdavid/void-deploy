@@ -1,0 +1,87 @@
+{
+  "layer": "top",
+  "spacing": 12,
+  "modules-left": ["river/tags"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "custom/sound",
+    "custom/network",
+    "custom/monitors",
+    "custom/bluetooth",
+    "battery",
+    "custom/icon"
+  ],
+
+  "river/tags": {
+    "num-tags": 10,
+    "tag-labels": ["", "󰅩", "󰈹", "", "󰲨", "󰍫", "󰍩", "󰃮", "", "󰁄"]
+    // "tag-labels": ["󰲠","󰲢","󰲤","󰲦","󰲨","󰲪","󰲬","󰲮","󰲰", "󰁄"]
+  },
+
+  "tray": {
+    "icon-size": 28,
+    "spacing": 3
+  },
+
+  "custom/sound": {
+    "format": "{}",
+    "interval": 1,
+    "exec": "~/.config/waybar/modules/audio/mute_status.sh",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "/usr/bin/pavucontrol",
+    "on-scroll-up": "wpctl set-volume --limit 0.7 @DEFAULT_AUDIO_SINK@  1%+",
+    "on-scroll-down": "wpctl set-volume --limit 0.7 @DEFAULT_AUDIO_SINK@  1%-"
+  },
+
+  "custom/monitors": {
+    "format": "{}",
+    "exec": "echo '󰹑 '",
+    "on-click": "python3 ~/.config/waybar/modules/monitor/monitor-tooltip.py",
+    "on-click-right": "/usr/bin/wlr-randr --output DP-5 --mode 2560x1440@119.988998",
+    "on-scroll-up": "brightnessctl s 7+",
+    "on-scroll-down": "brightnessctl s 7-"
+  },
+
+  // TODO -> FIX
+  "custom/network": {
+    "format": "{}",
+    "interval": 1,
+    "exec": "~/.config/waybar/modules/network/network_status.sh",
+    "on-click": "~/.config/waybar/modules/network/network_status.sh --ips | xargs -d '\n' notify-send 'Network Status'",
+    "on-click-right": "alacritty --hold -e nmtui"
+  },
+
+  // TODO -> Implement + Hide if not needed
+  "custom/bluetooth": {
+    "format": "{}",
+    "exec": "echo '󰂯'",
+    "on-click": "blueman-manager",
+    "on-click-right": "python3 ~/.config/waybar/modules/bluetooth/bluetooth-tooltip.py"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 20,
+      "critical": 10
+    },
+    "interval": 4,
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-charging-alt": "{icon} {time}%",
+    "format-alt": "{icon} {time}%",
+    "format-full": "󰁹",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"]
+  },
+
+  "tray": {
+    "icon-size": 28,
+    "spacing": 3
+  },
+
+  "custom/icon": {
+    "exec": "echo ' '",
+    "format": "{}"
+  }
+}

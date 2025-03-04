@@ -1,0 +1,12 @@
+# TODO
+- [x] Plan Structure
+- [ ] Check Deploy Script
+- [ ] Include Clean Configs
+    - [x] Fonts
+    - [x] Alacritty
+    - [x] ZSH
+    - [x] tofi
+    - [x] Mako
+    - [x] gtk-3.0
+    - [ ] waybar
+    - [x] neovim

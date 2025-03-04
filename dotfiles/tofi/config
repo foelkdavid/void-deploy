@@ -1,0 +1,130 @@
+# TEXT
+	font = "Sans"
+	font-size = 30
+	font-features = ""
+	font-variations = ""
+	hint-font = true
+	text-color = #ebdbb2
+	prompt-background = #00000000
+	prompt-background-padding = 0
+	prompt-background-corner-radius = 0
+
+	# Placeholder text theme
+	placeholder-color = #FFFFFF4f
+	placeholder-background = #00000000
+	placeholder-background-padding = 0
+	placeholder-background-corner-radius = 0
+
+	# Input text theme
+	# input-color = #FFFFFF
+	input-background = #00000000
+	input-background-padding = 0
+	input-background-corner-radius = 0
+
+	# Default result text theme
+	# default-result-color = #FFFFFF
+	default-result-background = #00000000
+	default-result-background-padding = 0
+	default-result-background-corner-radius = 0
+
+	# Selection text
+	#selection-color = #F92672
+	selection-color = #a89984
+	selection-background = #00000000
+	selection-background-padding = 0
+	selection-background-corner-radius = 0
+
+	# Matching portion of selection text
+	selection-match-color = #00000000
+
+
+	text-cursor-style = bar
+	text-cursor-corner-radius = 0
+
+	prompt-text = "  "
+	prompt-padding = 3
+	placeholder-text = "run:"
+	num-results = 0
+	result-spacing = 0
+	horizontal = false
+	min-input-width = 0
+
+
+
+# WINDOW DESIGN
+	width = 40%
+	height = 20%
+	background-color = #282828
+	outline-width = 0
+	outline-color = #d79921
+	border-width = 2
+	border-color = #d79921
+	corner-radius = 0
+
+	padding-top = 8
+	padding-bottom = 8
+	padding-left = 8
+	padding-right = 8
+
+	# Whether to clip text drawing to be within the specified padding. This
+	# is mostly important for allowing text to be inset from the border,
+	# while still allowing text backgrounds to reach right to the edge.
+	clip-to-padding = true
+
+	# Whether to scale the window by the output's scale factor.
+	scale = true
+
+
+
+# WINDOW POSITION
+	output = ""
+
+	anchor = center
+	exclusive-zone = -1
+
+	margin-top = 0
+	margin-bottom = 0
+	margin-left = 0
+	margin-right = 0
+
+
+
+# BEHAVIOUR
+	hide-cursor = false
+
+	text-cursor = false
+
+	history = true
+
+	matching-algorithm = normal
+
+	require-match = true
+
+	# If true, automatically accept a result if it is the only one
+	# remaining. If there's only one result on startup, window creation is
+	# skipped altogether.
+	auto-accept-single = false
+
+	hide-input = false
+
+	# Replace displayed input characters with a character. If the empty
+	# string is given, input will be completely hidden.
+	# This option only has an effect when hide-input is set to true.
+	hidden-character = "*"
+
+	# If true, use physical keys for shortcuts, regardless of the current
+	# keyboard layout. If false, use the current layout's keys.
+	physical-keybindings = true
+
+	print-index = false
+
+	drun-launch = false
+
+	terminal = alacritty -e
+
+	late-keyboard-init = false
+
+	multi-instance = false
+
+	ascii-input = false
+

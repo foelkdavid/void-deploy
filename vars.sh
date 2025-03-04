@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# intel,amd,nvidia
+GPU_DRIVER=intel
+USERSHELL=/usr/bin/zsh
+
+USERGROUPS=(
+    users
+    _seatd
+    wheel
+    audio
+    video
+    bluetooth
+)
+
+PACKAGES=(
+    seatd
+    dbus
+    pipewire
+    bluez
+    libspa-bluetooth
+    unzip
+    pass
+    swaybg
+    swaylock
+    socklog-void
+    zsh
+    noto-fonts-ttf
+    noto-fonts-emoji
+    neovim
+    alacritty
+    wlr-randr
+    wl-clipboard
+    river
+    Waybar
+    waylock
+    slurp
+    grim
+    wl-copy
+    firefox
+    tofi
+    git
+    mako
+    Thunar
+    fastfetch
+    btop
+    htop
+    NetworkManager
+    curl
+)
+
+SERVICES=(
+    NetworkManager
+    seatd
+    dbus
+    bluetoothd
+    nanoklogd
+    socklog-unix
+)

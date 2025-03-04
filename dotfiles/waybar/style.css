@@ -1,0 +1,114 @@
+@import "colors.css";
+
+window#waybar {
+  background-color: @gruvboxblack;
+  color: @gruvboxwhite;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  font-size: 1.2rem;
+  font-size: 1.7rem;
+}
+
+#tags button {
+  color: @gruvboxblack;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  font-size: 1.85rem;
+  font-size: 2.35rem;
+}
+
+#tags button.occupied {
+  color: @gruvboxwhite;
+}
+
+#tags button.focused {
+  color: @gruvboxgreen;
+}
+
+#tags button.urgent {
+  color: @gruvboxyellow;
+}
+
+#battery {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 2rem;
+  font-size: 2.5rem;
+  color: @gruvboxwhite;
+}
+
+/* #battery.charging, #battery.plugged {
+    color: @gruvboxgreen;
+  } */
+
+#battery.warning {
+  /** color: @gruvboxyellow; **/
+  color: @gruvboxyellow;
+}
+
+#battery.critical {
+  color: @gruvboxred;
+}
+
+#battery.full {
+  color: @gruvboxgreen;
+}
+
+#tray {
+  font-size: 3rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  padding-left: 0;
+  padding-right: 0rem;
+}
+
+#custom-icon {
+  color: @gruvboxgreen;
+  font-size: 2.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0;
+  padding-right: 0.4rem;
+}
+
+#custom-bluetooth {
+  font-size: 2.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.2rem;
+  padding-left: 0rem;
+  color: @gruvboxblue;
+}
+
+#custom-monitors {
+  font-size: 2.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.2rem;
+  padding-left: 0rem;
+  color: @gruvboxwhite;
+}
+
+#custom-sound {
+  font-size: 2.4rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.4rem;
+  padding-left: 0rem;
+  color: @gruvboxwhite;
+}
+
+#custom-network {
+  font-size: 2.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.2rem;
+  padding-left: 0rem;
+  color: @gruvboxwhite;
+}
+
+#tray {
+  margin-right: 0.3rem;
+}

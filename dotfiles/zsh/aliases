@@ -1,0 +1,7 @@
+alias xi='sudo xbps-install -Sy && sudo xbps-install'
+alias xu='echo "Updating System (sudo xbps-install -Syu):" && sudo xbps-install -Syu'
+xrs() {xbps-query -Rs "$1" | less -F}
+xrS() {xbps-query -RS "$1" | less -F}
+alias xclean='echo "Starting System Cleanup (sudo xbps-remove -Oo):" && sudo xbps-remove -Oo'
+alias xrm='sudo xbps-remove'
+alias ls='ls --color'

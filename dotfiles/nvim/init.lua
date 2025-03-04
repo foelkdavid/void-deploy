@@ -1,0 +1,6 @@
+require("lazy_setup")
+require("options")
+require("style")
+require("mappings")
+require("autoformat")
+require("plugin_config")
