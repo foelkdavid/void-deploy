@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # intel,amd,nvidia
-GPU_DRIVER=intel
+GPU_DRIVER=amd
 USERSHELL=/usr/bin/zsh
 
 USERGROUPS=(
@@ -47,6 +47,7 @@ PACKAGES=(
     htop
     NetworkManager
     curl
+    tmux
 )
 
 SERVICES=(

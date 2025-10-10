@@ -16,7 +16,7 @@ All dotfiles are linked from:
 
 ## Pushing Changes
 1. Make changes
-2. git push
+2. git push (ideally not into my repo lol)
 
 ## Pulling Changes
 1. Git Pull
