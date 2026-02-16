@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# intel,amd,nvidia
+# intel,amd,nvidia,rpi5
 GPU_DRIVER=amd
 USERSHELL=/usr/bin/zsh
 

@@ -59,6 +59,11 @@ case "$GPU_DRIVER" in
         echo "-> nvidia"
         echo "TODO"
         ;;
+    rpi5)
+        echo "-> rpi5"
+        sudo xbps-install -Sy mesa-dri rpi5-kernel rpi5-kernel-headers rng-tools
+        sudo ln -s /etc/sv/rngd /var/service/rngd
+        ;;
     *)
         echo "-> ???"
         echo "No Driver defined, skipping..."
