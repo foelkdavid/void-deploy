@@ -4,6 +4,13 @@
 GPU_DRIVER=amd
 USERSHELL=/usr/bin/zsh
 
+# bios,uefi
+BOOTLOADER_TYPE=uefi
+# Target disk for installation (e.g. /dev/sda, /dev/nvme0n1)
+BOOT_DISK=/dev/sda
+# Size of the boot/EFI partition (e.g. 512M, 1G)
+BOOT_PARTITION_SIZE=512M
+
 USERGROUPS=(
     users
     _seatd
