@@ -1,6 +1,7 @@
 #!/bin/bash
-# Pre-install script: partitions the target disk and sets up the bootloader
-# for both BIOS (GRUB) and UEFI (EFI) systems.
+# Pre-install script: partitions the target disk and sets up the bootloader.
+# UEFI: partitions disk and mounts EFI partition — no GRUB (uses native EFI boot).
+# BIOS: partitions disk and installs GRUB to the MBR.
 # Run this BEFORE deploy.sh on a fresh Void Linux installation.
 source ./vars.sh
 
@@ -123,8 +124,7 @@ esac
 echo "-> Partitioning complete."
 
 # ---------------------------------------------------------------------------
-# Install base system (void-installer / XBPS bootstrap is assumed done)
-# This section handles only bootloader installation.
+# Bootloader installation (BIOS only — UEFI uses native EFI boot, no GRUB)
 # ---------------------------------------------------------------------------
 echo " "
 sleep 1 && echo "####################"
@@ -132,16 +132,9 @@ echo "Bootloader Installation"
 
 case "$BOOTLOADER_TYPE" in
     uefi)
-        command -v grub-install >/dev/null 2>&1 || \
-            sudo xbps-install -Sy grub-x86_64-efi efibootmgr
-        echo "-> Installing GRUB (EFI) to $EFI_PART..."
-        sudo grub-install --target=x86_64-efi \
-            --efi-directory=/mnt/boot/efi \
-            --boot-directory=/mnt/boot \
-            --bootloader-id=void \
-            --recheck
-        sudo grub-mkconfig -o /mnt/boot/grub/grub.cfg
-        echo "-> GRUB (EFI) installed."
+        echo "-> UEFI: EFI System Partition is ready at /mnt/boot/efi."
+        echo "-> No GRUB needed — the system will boot via native EFI."
+        echo "-> Run void-installer or register an EFI boot entry with efibootmgr after chrooting."
         ;;
 
     bios)

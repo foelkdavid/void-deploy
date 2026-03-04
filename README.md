@@ -13,7 +13,7 @@ Sets up Voidlinux + River
    - Set `BOOT_PARTITION_SIZE` (e.g. `512M`)
 4. Run `./install.sh` — this will:
    - Create a GPT partition table with an EFI System Partition (FAT32) and a root partition (ext4)
-   - Install and configure GRUB for EFI (`grub-x86_64-efi`)
+   - Mount the EFI partition at `/mnt/boot/efi` (no GRUB — uses native EFI boot)
 5. Complete the Void Linux base installation into `/mnt`.
 6. Reboot, login to your sudo user, and run `./deploy.sh`.
 
@@ -45,11 +45,11 @@ Sets up Voidlinux + River
 ```
 
 ### Bootloader Configuration
-`install.sh` runs `grub-install` and `grub-mkconfig` automatically, targeting the system mounted at `/mnt`.
-- **UEFI**: installs `grub-x86_64-efi`, target `x86_64-efi`, EFI directory `/mnt/boot/efi`, config written to `/mnt/boot/grub/grub.cfg`.
-- **BIOS**: installs `grub`, target `i386-pc`, writes MBR to `BOOT_DISK`, config written to `/mnt/boot/grub/grub.cfg`.
+`install.sh` handles bootloader setup differently per firmware type:
+- **UEFI**: no GRUB — the EFI System Partition is prepared and mounted at `/mnt/boot/efi`. Use `void-installer` or `efibootmgr` to register the EFI boot entry after chrooting.
+- **BIOS**: installs `grub` (`i386-pc` target), writes MBR to `BOOT_DISK`, config written to `/mnt/boot/grub/grub.cfg`.
 
-After reboot, GRUB will load from the configured partition and boot Void Linux.
+After reboot, the system will boot via native EFI (UEFI) or GRUB (BIOS).
 
 # Maintenance
 All dotfiles are linked from:
